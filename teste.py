@@ -20,4 +20,4 @@ elif opcao == '4':
 
 respostastr = str(resposta)
 
-print('a resposta é : '+respostastr)
+print('a resposta e: '+respostastr)
