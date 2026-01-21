@@ -15,8 +15,15 @@ while True:
     if escolha == '1': 
         adicao = input('O que você quer adicionar: ')
         lista.append(adicao)
+        print('adicionado com sucesso!')
     elif escolha == '2':
-        print(lista)
+        if len(lista) == 0:
+            print('Nenhuma tarefa')
+        
+        else:    
+            print('\n Sua lista:')
+            for i, tarefa in enumerate(lista, 1):
+                print(f'{i}. {tarefa}')
     elif escolha == '3':
         remover = input('O que você quer remover: ')
         if remover in lista:
