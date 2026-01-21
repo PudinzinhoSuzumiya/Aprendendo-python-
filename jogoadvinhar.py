@@ -9,8 +9,11 @@ while numtentado != numeropensado:
     try:
         numtentado = int(input('Digite um número: '))
         tentativas += 1
+        if numtentado < 1 or numtentado >100:
+            print('Digite um número entre 1 e 100')
 
-        if numtentado > numeropensado:
+
+        elif numtentado > numeropensado:
             print('Número maior que o pensado!')
         elif numtentado < numeropensado:
             print('Número menor que o pensado!')
