@@ -31,6 +31,7 @@ while True:
         else:
             print('ERRO, item não presente na lista')
     elif escolha == '4':
+        print('Até mais!')
         exit()
     else:
         print('Opção inválida!!')
