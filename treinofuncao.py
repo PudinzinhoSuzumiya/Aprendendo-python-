@@ -1,22 +1,44 @@
-def palavra_com_mais_consoantes_que_vogal(lista):
-    for palavra in lista:
-        contador_vogal = 0
-        contador_consoantes = 0
+alunos = [
+    {"nome": "João", "nota": 8.5},
+    {"nome": "Maria", "nota": 5.5},
+    {"nome": "Pedro", "nota": 3.0},
+    {"nome": "Ana", "nota": 7.0},
+    {"nome": "Carlos", "nota": 6.0},
+    {"nome": "Beatriz", "nota": 9.5},
+    {"nome": "Lucas", "nota": 4.5},
+    {"nome": "Fernanda", "nota": 7.8},
+    {"nome": "Rafael", "nota": 6.5},
+    {"nome": "Juliana", "nota": 2.5}
+]
 
-        for letra in palavra:
-            letratotal = letra.lower()
-            if letratotal.isalpha():
-                if letratotal in 'aeiou':
-                    contador_vogal += 1
-                else:
-                 contador_consoantes += 1
+aprovados = []
+reprovados = []
+recuperacao = []
+
+def classificar_alunos(lista):
+    for aluno in lista:
+        if aluno["nota"] >= 7:
+            aprovados.append(aluno)
+        elif aluno["nota"] >= 5:
+            recuperacao.append(aluno)
+        else:
+            reprovados.append(aluno)
+    print(f"APROVADOS ({len(aprovados)})")
+    for aluno in aprovados:
+           
+        print()
+        print(f" {aluno['nome']} ({aluno['nota']})")
+    print(f"RECUPERACAO ({len(recuperacao)})")
+    for aluno in recuperacao:
             
-        if contador_consoantes > contador_vogal:
-            print(f"'{palavra} tem mais consoantes que vogais (consoantes: {contador_consoantes} vogais: {contador_vogal}) ")
-        elif contador_consoantes < contador_vogal:
-            print(f"{palavra} tem menos consoantes que vogais (consoantes: {contador_consoantes} do que vogais: {contador_vogal}")
-        elif contador_consoantes == contador_vogal:
-            print(f"{palavra} tem a mesma quantidade de consoantes que vogais (consoantes: {contador_consoantes} vogais: {contador_vogal}")
+        print()
+        print(f" {aluno['nome']} ({aluno['nota']})")
+    print(f"REPROVADOS ({len(reprovados)})")
+    for aluno in reprovados:
+            
+        print()
 
-palavras = ['Lousa', 'python', 'aeiou', 'bola', 'sim', 'oi', 'transporte', 'João']
-palavra_com_mais_consoantes_que_vogal(palavras)
+        print(f" {aluno['nome']} ({aluno['nota']})")
+
+
+classificar_alunos(alunos)
