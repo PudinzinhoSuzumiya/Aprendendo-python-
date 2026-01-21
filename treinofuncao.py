@@ -1,21 +1,22 @@
-resposta = 0
-def inicia_com_vogal(lista):
-
-    contagem = 0
+def palavra_com_mais_consoantes_que_vogal(lista):
     for palavra in lista:
-        primeira_letra = palavra[0].lower()
-        if primeira_letra in 'aeiou':
-            contagem += 1
-        
-        
-    return contagem
+        contador_vogal = 0
+        contador_consoantes = 0
 
+        for letra in palavra:
+            letratotal = letra.lower()
+            if letratotal.isalpha():
+                if letratotal in 'aeiou':
+                    contador_vogal += 1
+                else:
+                 contador_consoantes += 1
+            
+        if contador_consoantes > contador_vogal:
+            print(f"'{palavra} tem mais consoantes que vogais (consoantes: {contador_consoantes} vogais: {contador_vogal}) ")
+        elif contador_consoantes < contador_vogal:
+            print(f"{palavra} tem menos consoantes que vogais (consoantes: {contador_consoantes} do que vogais: {contador_vogal}")
+        elif contador_consoantes == contador_vogal:
+            print(f"{palavra} tem a mesma quantidade de consoantes que vogais (consoantes: {contador_consoantes} vogais: {contador_vogal}")
 
-palavras = ['anel', 'abelha', 'zoiao']
-
-resultado = inicia_com_vogal(palavras)
-
-if resultado != 0:
-    print(resultado)
-else:
-    print('Lista vazia')
+palavras = ['Lousa', 'python', 'aeiou', 'bola', 'sim', 'oi', 'transporte', 'João']
+palavra_com_mais_consoantes_que_vogal(palavras)
