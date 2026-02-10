@@ -11,7 +11,7 @@ def calcular_media(aluno):
     medianotas = somanotas/qtd_notas
     notasarredondas = round(medianotas, 2)
     return notasarredondas
-dados = "dados.json"
+dados = "dadosescolares.json"
 def salvar_dados(lista_alunos):
     with open(dados, "w", encoding="utf-8") as arquivo:
         json.dump(lista_alunos, arquivo, indent=4, ensure_ascii=False)
